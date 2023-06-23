@@ -1,0 +1,55 @@
+  #health-bar {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    width: 200px;
+    height: 20px;
+    background-color: #532E0D;
+    
+  }
+
+  #health-bar .bar {
+    height: 100%;
+    box-shadow: 0px 0px 10px #FF1B1B;
+    background-color: #FF1B1B;
+    border-radius: 1px;
+    transition: width 0.2s ease-in-out;
+  }
+
+  #health-bar .bar.full {
+    width: 100%;
+  }
+
+  #health-bar .bar.half {
+    width: 50%;
+  }
+    /* stylowanie konsoli */
+    #console {
+      position: fixed;
+      bottom: 0;
+      right: 0;
+      background-color: #33333382;
+      color: #fff;
+      padding: 10px;
+      font-family: monospace;
+      font-size: 16px;
+    }
+  #aler {
+    height: 20px;
+    border-radius: 5px;
+    background: #28282859;
+    color: #FFFFFF;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    bottom: 20px;
+    left: 50vw;
+    width: auto;
+    padding: 10px;
+    display: none ;
+    justify-content: center;
+    align-items: center;
+  }
+  #buttons{ position :absolute ;bottom: 50px;left:5vw;width :200px; }.btnere{ display  :flex ;float :left ;margin :2px;justify-content :center ;
+  border: 2px solid #B2B2B22B;
+  border-radius: 5px;
+  align-items :center ;width :80px;height :80px;font-size :20px;background :#000000; color: #D0D0D0}.btnere.amactive { background :#00E6FF; }.nulljse{display :flex;float :left;margin :2px;justify-content :center;align-items :center;width :20px;height :50px; font-size :20px;background :#1A1A1A00;color: #D0D0D000;}
