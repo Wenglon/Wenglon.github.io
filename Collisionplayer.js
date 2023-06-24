@@ -317,16 +317,21 @@ var collide = 0
 document.addEventListener('keydown', event => {
   switch (event.key) {
     case 'ArrowLeft':
-      movePlayer(-1, 0);
+      left=1
+		  right=0
+		  
       break;
     case 'ArrowRight':
-      movePlayer(1, 0);
+      right=1
+      left=0
+		  
       break;
     case 'ArrowUp':
-      movePlayer(0, -1);
+      jump()
+		  
       break;
     case 'ArrowDown':
-      movePlayer(0, 1);
+      
       break;
   }
 });
