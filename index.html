@@ -1,9 +1,11 @@
-  <title>wenglon</title>
+<!DOCTYPE html>
+<html onclick="openFullscreen()"> 
+<title>wenglon</title>
   
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable =0" />
 <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
-<!DOCTYPE html>
+
 
   
 <img src="./sky.png" id="sky">
@@ -13,8 +15,7 @@
 		z-index :-1;
 	}
 </style>
-<script src="./MainLoop.js"></script>
-<script src="./Restart.js"></script>
+
 <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
 <audio id="audio" src="./cavename.mp3"></audio>
 <audio id="overworld" src="./song-at-mountain-.wav"></audio>
@@ -47,7 +48,7 @@ var playerX=0
 </script>
 
 
-<html onclick="openFullscreen()">
+
 <div id="ytt" style="display :none ;position:fixed ;z-index:9999999; top:0;left:0;height:100vh;width:100vw;background :rgba(100,2,2,1) ;color:rgba(200,10,2,1);font-size:44px;">
   <p style="display :flex ; justify-content: center ; text-align: center;margin-top:20vh;text-shadow: 0px 0px 0px rgba(10, 10, 10, 0.8);">You died
   <br><br></p><a style="display:flex ;justify-content :center ;align-content :center ;" onclick="r()" >Respawn?</a>
@@ -255,115 +256,7 @@ outline :2px solid #767676;
     <img src="./Boss.gif" style="display :none ;" alt="" id="monster"  />
 
 
-    <style>
-      #monster{
-        position :absolute ;
-        width :150px;
-        height :150px;
-        
-      }
-    </style>
-    <script>
     
-    
-    //           //
-    //           //
-    //  AI  3.0  //
-    //           //
-    //           //
-    
-    
-var potwor = document.getElementById('monster');
-
-
-
-//
-
-// BOSS TEST
-
-// RUN
-
-//
-
-
-/*setTimeout(function (){
-  potwor.src = "./Boss.gif"
-  nextmap=10
-  newmap()
-  generate()
-  constructn()
-},1000)*/
-var attacking = true;
-var initialPosition = {
-  top: potwor.offsetTop,
-  left: potwor.offsetLeft
-};
-
-// Obsługa ruchu potwora w stronę dotyku
-//setTimeout(mo, 2000);
-
-function mo() {
-  potwor.style.display ="block"
-  var potworX = potwor.offsetLeft + potwor.offsetWidth / 10;
-  var potworY = potwor.offsetTop + potwor.offsetHeight - 30;
-
-  var dx = playerX * tileSize - potworX;
-  var dy = playerY * tileSize - potworY;
-
-  var angle = Math.atan2(dy, dx);
-  var speed = 2;
-
-  var velocityX = Math.cos(angle) * speed;
-  var velocityY = Math.sin(angle) * speed;
-
-  // Sprawdza czy nastąpiła kolizja z graczem
-  if (dx > -20 && dx < 60 && dy > -60 && dy < 20) {
-    // odejmuje życie
-    health -= 1;
-    
-    // Czeka 5 sekund po ataku
-    setTimeout(() => {
-      // Odleć w górę
-      moveUp();
-    }, 1000);
-  }
-  
-  // Poruszanie się potwora
-  if (attacking) {
-    potwor.style.left = potwor.offsetLeft + velocityX + 'px';
-    potwor.style.top = potwor.offsetTop + velocityY + 'px';
-  }
-  
-  
-    requestAnimationFrame(mo);
-  
-}
-
-function moveUp() {
-  attacking = false;
-  var distance = 100 * tileSize; // 5 * rozmiar kafelka
-
-  var interval = setInterval(() => {
-    if (distance <= 0) {
-      
-
-    } else {
-      speed=2
-      potwor.style.top = potwor.offsetTop - speed + 'px';
-      distance -= speed;
-      
-    }
-    setTimeout(function (){
-      clearInterval(interval); 
-      setTimeout(function (){
-      attacking=true
-      },3000)
-    },200)
-  }, 1);
-  
-}
-
-    </script>
     <div id="tles" >
       
     </div>
@@ -562,7 +455,7 @@ but some bugs is normal
   </script>
 </body>
 
-</html>
+
 <script>
   setTimeout(mthp, 20)
   let health = 100;
@@ -627,7 +520,120 @@ but some bugs is normal
   
   } 
 </script>
+<style>
+      #monster{
+        position :absolute ;
+        width :150px;
+        height :150px;
+        
+      }
+    </style>
+    <script>
+    
+    
+    //           //
+    //           //
+    //  AI  3.0  //
+    //           //
+    //           //
+    
+    
+var potwor = document.getElementById('monster');
+
+
+
+//
+
+// BOSS TEST
+
+// RUN
+
+//
+
+
+/*setTimeout(function (){
+  potwor.src = "./Boss.gif"
+  nextmap=10
+  newmap()
+  generate()
+  constructn()
+},1000)*/
+var attacking = true;
+var initialPosition = {
+  top: potwor.offsetTop,
+  left: potwor.offsetLeft
+};
+
+// Obsługa ruchu potwora w stronę dotyku
+//setTimeout(mo, 2000);
+
+function mo() {
+  potwor.style.display ="block"
+  var potworX = potwor.offsetLeft + potwor.offsetWidth / 10;
+  var potworY = potwor.offsetTop + potwor.offsetHeight - 30;
+
+  var dx = playerX * tileSize - potworX;
+  var dy = playerY * tileSize - potworY;
+
+  var angle = Math.atan2(dy, dx);
+  var speed = 2;
+
+  var velocityX = Math.cos(angle) * speed;
+  var velocityY = Math.sin(angle) * speed;
+
+  // Sprawdza czy nastąpiła kolizja z graczem
+  if (dx > -20 && dx < 60 && dy > -60 && dy < 20) {
+    // odejmuje życie
+    health -= 1;
+    
+    // Czeka 5 sekund po ataku
+    setTimeout(() => {
+      // Odleć w górę
+      moveUp();
+    }, 1000);
+  }
+  
+  // Poruszanie się potwora
+  if (attacking) {
+    potwor.style.left = potwor.offsetLeft + velocityX + 'px';
+    potwor.style.top = potwor.offsetTop + velocityY + 'px';
+  }
+  
+  
+    requestAnimationFrame(mo);
+  
+}
+
+function moveUp() {
+  attacking = false;
+  var distance = 100 * tileSize; // 5 * rozmiar kafelka
+
+  var interval = setInterval(() => {
+    if (distance <= 0) {
+      
+
+    } else {
+      speed=2
+      potwor.style.top = potwor.offsetTop - speed + 'px';
+      distance -= speed;
+      
+    }
+    setTimeout(function (){
+      clearInterval(interval); 
+      setTimeout(function (){
+      attacking=true
+      },3000)
+    },200)
+  }, 1);
+  
+}
+
+	       </script>
+<script src="/MainLoop.js"></script>
+<script src="./Restart.js"></script> 
 <script src="./Music.js"></script>
 <link rel="stylesheet" href="./Block.css ">
 <link rel="stylesheet" href="./Gui.css">
 <link rel="stylesheet" href="./Style.css">
+</html>
+
