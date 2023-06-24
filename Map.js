@@ -432,6 +432,7 @@ if (nextmap===9) {
   
   ]
 }
+var aud2 = document.getElementById('fatal')
 if (nextmap === 10) {
   //spawn boss
   mo() 
@@ -464,12 +465,12 @@ Objs = [ //matryc
 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1,
 //4
 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1,
+0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 1,
 //5
 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
 0, 8, 0, 0, 0, 0, 0, 0, 0, 0, 1,
 //6
-1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+1, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0,
 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1,
 //7
 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
@@ -498,10 +499,10 @@ function reset(){
   newmap()
   
   setTimeout(generate, 200)
-    setTimeout(constructn, 300)
+    setTimeout(constructnn, 300)
   playerY = 0;
   playerX = 0;
   
   
   
-}
+  } 
