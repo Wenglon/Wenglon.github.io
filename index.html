@@ -301,8 +301,10 @@ var initialPosition = {
 
 // Obsługa ruchu potwora w stronę dotyku
 //setTimeout(mo, 2000);
-
+let Boss1health =100
+var speed = 2;
 function mo() {
+  document.querySelector('.Bossbar').style.display ="block"
   potwor.style.display ="block"
   var potworX = potwor.offsetLeft + potwor.offsetWidth / 10;
   var potworY = potwor.offsetTop + potwor.offsetHeight - 30;
@@ -311,7 +313,7 @@ function mo() {
   var dy = playerY * tileSize - potworY;
 
   var angle = Math.atan2(dy, dx);
-  var speed = 2;
+  
 
   var velocityX = Math.cos(angle) * speed;
   var velocityY = Math.sin(angle) * speed;
@@ -333,36 +335,72 @@ function mo() {
     potwor.style.left = potwor.offsetLeft + velocityX + 'px';
     potwor.style.top = potwor.offsetTop + velocityY + 'px';
   }
-  
-  
+  if(Boss1health < 30){
+    speed=7;
+  }
+  if(Boss1health > 1 && health > -20){
     requestAnimationFrame(mo);
-  
+  }
+    if (dx > -20 && dx < 60 && dy > -60 && dy < 20 && canv == 1) {
+      // odejmuje życie
+      Boss1health -= 0.25;
+      health += 1.3;
+      // Czeka 5 sekund po ataku
+      setTimeout(() => {
+        // Odleć w górę
+        moveUp();
+      }, 3000);
+    }
+  if(Boss1health < 1){
+    setTimeout(function (){
+    potwor.style.display="none "
+    document.querySelector('bar').innerHTML ="you win"
+    document.querySelector('bar').style.width ="100px"
+    },200)
+  }
+  if(health < -20){
+    health = -21;
+    mthp()
+    setTimeout(function (){
+    potwor.style.display="none"
+    document.getElementById('sky').src='./sky.png'
+    },200)
+  }
 }
 
 function moveUp() {
   attacking = false;
-  var distance = 100 * tileSize; // 5 * rozmiar kafelka
+  var distance = 50 * tileSize; // 5 * rozmiar kafelka
 
   var interval = setInterval(() => {
     if (distance <= 0) {
       
 
     } else {
-      speed=2
+      
       potwor.style.top = potwor.offsetTop - speed + 'px';
       distance -= speed;
       
     }
     setTimeout(function (){
       clearInterval(interval); 
+      var potworX = potwor.offsetLeft + potwor.offsetWidth / 10;
+      var potworY = potwor.offsetTop + potwor.offsetHeight - 30;
+      
+      var dx = playerX * tileSize - potworX;
+      var dy = playerY * tileSize - potworY;
+      canv=1
+      
       setTimeout(function (){
       attacking=true
-      },3000)
+      canv=0
+      },12000)
+      
     },200)
   }, 1);
   
 }
-
+var canv=0;
     </script>
     <div id="tles" >
       
@@ -560,18 +598,25 @@ but some bugs is normal
   <script>
 
   </script>
+  <div class="Bossbar">
+    <bar>Vobasol Boss </bar>
+  </div>
 </body>
 
 </html>
 <script>
   setTimeout(mthp, 20)
   let health = 100;
+  
 
   function mthp() {
     let bar = document.querySelector('.bar');
     let percentage = health + '%';
 
+   let Bossbar = document.querySelector('bar');
+   let Bosspercentage = Boss1health + '%';
     bar.style.width = percentage;
+    Bossbar.style.width = Bosspercentage;
     if (hurtty == 1) {
       let percentage = health + '%';
       health -= 5;
@@ -594,11 +639,15 @@ but some bugs is normal
         audio.src = "./not_again.mp3";
         audio.currentTime = 0;
         aud.pause();
+        
       audio.play();
       llll=1
+      if(aud2){
+      aud2.pause();
+      }
       }
     }
-    setTimeout(mthp, 100)
+    setTimeout(mthp, 10)
   }
   var llll=0
 </script>
@@ -610,7 +659,7 @@ but some bugs is normal
 
 </style>
 <script src="./Fps.js"></script>
-<script src="./Collisionplayer.js"></script>
+<script src="./Collision&player.js"></script>
 
 
 
@@ -631,3 +680,41 @@ but some bugs is normal
 <link rel="stylesheet" href="./Block.css ">
 <link rel="stylesheet" href="./Gui.css">
 <link rel="stylesheet" href="./Style.css">
+
+<style>
+  .Bossbar{
+    display :none ;
+    position :fixed ;
+    z-index :9999;
+    width: 50vw;
+    height :30px;
+    top: 5vh;
+    left:50vw;
+    background :#000000;
+    transform:translate(-50%,0);
+    
+  }
+  bar{
+    
+    background: #FF0000;
+    position :absolute ;
+    height :100%;
+    text-align: center ;
+    display :flex ;
+    justify-content :center ;
+    align-items: center ;
+    color :#FFFFFF;
+  }
+  *{
+    margin :0;
+  }
+  html,
+  body {
+    touch-action: none;
+    user-scalable: none;
+    position : fixed ;
+    width :100vw;
+    height :100vh;
+    
+  }
+</style>
