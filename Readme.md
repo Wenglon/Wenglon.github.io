@@ -24,3 +24,20 @@ puting libs for C or Python is sucks and anoing on mobile YOU CANT WORK WITH C,P
 I don't like eany league in the world 
 pls help me :
 😭
+
+
+Xamarin is for C# you can made games for 2 devices mobile and pc
+
+what with tv
+what with webos
+
+
+How TO MAKE OS FOR ALL DEVICES WITH HTML
+OR SOMETHING THAT WORK AS SYSTEM ON ALL DEVICES 
+
+
+
+pls tell me on my 
+gmail or make discusion or something 
+
+awlie8518@gmail.com 
