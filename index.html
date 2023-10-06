@@ -1,0 +1,1032 @@
+<!--
+
+Updated:
+  styles.css
+  Index.html 
+  Map.js
+
+!-->
+
+
+
+  <title>wenglon</title>
+  
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable =0" />
+<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
+<!DOCTYPE html>
+
+  
+<img src="./sky.png" id="sky">
+<style>
+html.cha{
+  filter :url('#ca');
+}
+	#sky{
+		position :fixed ;
+		top:45vh;
+		left:40vw;
+		transform:translate(-50%,-50%);
+		z-index :-1;
+		scale:90vh;
+		width :calc(200vh + 50vw );
+		height :calc(200vh - 10vw);
+	}
+</style>
+<script src="./MainLoop.js"></script>
+<script src="./Restart.js"></script>
+<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+<audio id="audio" src="./cavename.mp3"></audio>
+<audio id="overworld" src="./song-at-mountain-.wav"></audio>
+<audio id="fatal" src="./Fatal.mp3"></audio>
+<script>
+var playerY =20
+var playerX=0
+  var nextmap = 1;
+  const phrases = [
+"Objs",
+"Mtwo"
+		];
+  var log = "null"
+  var nmap = 0;
+  var novb=0
+  var start = false;
+  
+  onload = function a() {
+    var start = false;
+    playerY =20
+  }
+  setTimeout(todown,300)
+  function todown(){
+    playerY =5
+    playerX =2
+  }
+  
+
+  
+</script>
+
+
+<html onclick="openFullscreen()">
+<div id="ytt" style="display :none ;position:fixed ;z-index:9999999; top:0;left:0;height:100vh;width:100vw;background :rgba(100,2,2,1) ;color:rgba(200,10,2,1);font-size:44px;">
+  <p style="display :flex ; justify-content: center ; text-align: center;margin-top:20vh;text-shadow: 0px 0px 0px rgba(10, 10, 10, 0.8);">You died
+  <br><br></p><a style="display:flex ;justify-content :center ;align-content :center ;" onclick="r()" >Respawn?</a>
+</div>
+<div ondblclick="document.querySelector('#debug').style.display='none'" id="debug" style="color :lime ;display :none ;background :black ;position: absolute ;top:0;left:0;z-index :1000;width :100vw;font-size :40px">hi</div>
+
+<head>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
+  <p id="fps"></p>
+
+  <div id="buttons">
+
+<button tabindex="1" id="leftarr" class="btnere" >&leftarrow;</button >
+<div class="nulljse"></div>
+<button tabindex="-1" id="rightarr" class="btnere">&rightarrow;</button>
+  </div>
+  <style>
+  </style>
+<script>
+const buttons = document.querySelectorAll('button');
+
+buttons.forEach((button) => {
+  button.addEventListener('mousedown', () => {
+    button.classList.add('amactive');
+  });
+
+  button.addEventListener('touchstart', () => {
+    button.classList.add('amactive');
+  });
+
+  button.addEventListener('mouseup', () => {
+    button.classList.remove('amactive');
+  });
+
+  button.addEventListener('touchend', () => {
+    button.classList.remove('amactive');
+  });
+});
+
+
+</script>
+  <div class="buttons">
+    <div id="btn1" style="box-shadow : 0px 0px 0px none ; font-size :10px">
+      v0.3.pre/to/4 &copy; 2023 Copyright . All rights reserved This code is in 100% maded by me <br>and graphick , music shaders , SEO ,and much much more you can go to <a href="https://Kashumy.github.io">Kashumy Profil</a> and you can subscribe me on youtube my YT '<a href="https://www.youtube.com/@Nexaturion?themeRefresh=1">Nexaturion </a><br></p>
+    </div>
+  </div>
+
+  <div class="noclick" id="buttona">A</div>
+  <script src="./Map.js"></script>
+
+  <style>
+    .buttons {
+      position: absolute;
+      bottom: 0;
+    }
+html {
+  
+        -webkit-touch-callout: none; /* iOS Safari                           */
+          -webkit-user-select: none; /* Safari                               */
+           -khtml-user-select: none; /* Konqueror HTML                       */
+             -moz-user-select: none; /* Firefox w przeszłości (stare wersje) */
+              -ms-user-select: none; /* Internet Explorer (>=10) / Edge      */
+                  user-select: none; /* Aktualnie wspierane przez:           */
+                                     /* Chrome, Opera and Firefox            */
+    }
+    #btn1 {
+      font-size: 10px;
+
+      color: #FFFFFF;
+    }
+
+    #fps {
+      position: fixed;
+      display :block ;
+      top: 10px;
+      right: 10px;
+      padding: 5px;
+      background-color: #33333300;
+      color: #2BFF00;
+      text-shadow:0 2px 3px #00FF1C;
+background: #2F2F2F ;
+outline :2px solid #767676;
+      font-size: 24px;
+      font-family: monospace;
+      border: none;
+      border-radius: 5px;
+      z-index: 99;
+    }
+
+    body {
+
+
+      overflow: hidden;
+      margin: 0;
+      padding: 0;
+      background-color: #0070BF; 
+      
+    }
+
+    .joystick {
+      position: absolute;
+      bottom: 100px;
+      left: 30px;
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      z-index: 9;
+      background-color: #8484842B;
+    }
+
+   .noclick {
+      position: absolute;
+      bottom: 70px;
+      right: 0px;
+
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      background-color: #000000;
+      color: #fff;
+      font-size: 24px;
+      font-weight: bold;
+
+    }
+
+    .click {
+      position: absolute;
+      bottom: 70px;
+      right: 0px;
+     
+      
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      background-color: #00DCFF2B;
+      color: #fff;
+      font-size: 24px;
+      font-weight: bold;
+      background-color: #00D7E3A3;
+    }
+
+    .stick {
+      position: absolute;
+      width: 50px;
+      height: 50px;
+      top: 25px;
+      left: 25px;
+      border-radius: 50%;
+      background-color: #FFFFFF5E;
+    }
+
+
+    a {
+      text-decoration: unset;
+      Color: red;
+      -webkit-tap-highlight-color: #42445A00
+    }
+    html {
+    
+    
+      overflow-x: hidden;
+      overflow-y: scroll;
+    }
+    
+    html::-webkit-scrollbar {
+      display: none;
+    }
+    
+    img {
+      pointer-events: none;
+    }
+
+#aler{
+  height :20px;
+  border-radius: 5px;
+  background :#282828;
+  color :#FFFFFF;
+  position :absolute;
+  transform:translate(-50%,-50%) ;
+  bottom :20px;
+  left:50vw;
+  width: auto;
+  padding :10px;
+  display :none ;
+  justify-content :center ;
+  align-items :center ;
+}
+  </style>
+</head>
+
+<body>
+<div id="aler">
+ 
+</div>
+  <div id="game-board">
+  <img src="./playerleft.png" class="player" id="player">
+    <!--  płytki kafelkowe -->
+    <img src="./Boss.gif" style="display :none ;" alt="" id="monster"  />
+
+
+    <style>
+      #monster{
+        position :absolute ;
+        width :150px;
+        height :150px;
+        
+      }
+    </style>
+    <script>
+    
+    
+    //           //
+    //           //
+    //  AI  3.0  //
+    //           //
+    //           //
+    
+    
+var potwor = document.getElementById('monster');
+
+
+
+//
+
+// BOSS TEST
+
+// RUN
+
+//
+
+
+function boss1map(){
+  document.getElementById('xd').style.display = "none "
+  potwor.src = "./Boss.gif"
+  nextmap=10
+  newmap()
+  generate()
+  constructn()
+}
+var attacking = true;
+var initialPosition = {
+  top: potwor.offsetTop,
+  left: potwor.offsetLeft
+};
+var Nope=0;
+// Obsługa ruchu potwora w stronę dotyku
+//setTimeout(mo, 2000);
+let Boss1health =100
+var speed = 2;
+function mo() {
+  Nope=1;
+  document.querySelector('.Bossbar').style.display ="block"
+  potwor.style.display ="block"
+  var potworX = potwor.offsetLeft + potwor.offsetWidth / 10;
+  var potworY = potwor.offsetTop + potwor.offsetHeight - 30;
+
+  var dx = playerX * tileSize - potworX;
+  var dy = playerY * tileSize - potworY;
+
+  var angle = Math.atan2(dy, dx);
+  
+
+  var velocityX = Math.cos(angle) * speed;
+  var velocityY = Math.sin(angle) * speed;
+
+  // Sprawdza czy nastąpiła kolizja z graczem
+  if (dx > -20 && dx < 60 && dy > -60 && dy < 20) {
+    // odejmuje życie
+    health -= 1;
+    
+    // Czeka 5 sekund po ataku
+    setTimeout(() => {
+      // Odleć w górę
+      moveUp();
+    }, 1000);
+  }
+  
+  // Poruszanie się potwora
+  if (attacking) {
+    potwor.style.left = potwor.offsetLeft + velocityX + 'px';
+    potwor.style.top = potwor.offsetTop + velocityY + 'px';
+  }
+  if(Boss1health < 30){
+    speed=4;
+  }
+  if(Boss1health > 1 && health > -20){
+    requestAnimationFrame(mo);
+  }
+    if (dx > -20 && dx < 60 && dy > -60 && dy < 20 && canv == 1) {
+      // odejmuje życie
+      Boss1health -= 0.5;
+      health += 1.3;
+      // Czeka 5 sekund po ataku
+      setTimeout(() => {
+        // Odleć w górę
+        moveUp();
+      }, 3000);
+    }
+  if(Boss1health < 1){
+    setTimeout(function (){
+    potwor.style.display="none "
+    document.querySelector('bar').innerHTML ="you win "
+    document.querySelector('bar').style.width ="100px"
+    document.getElementById('sky').src='./sky.png'
+    Nope=0
+    var aud2 = document.getElementById('fatal')
+    aud2.pause()
+    
+    },200)
+  }
+  if(health < -20){
+    health = -21;
+    mthp()
+    setTimeout(function (){
+    potwor.style.display="none"
+    document.getElementById('sky').src='./sky.png'
+    },200)
+  }
+}
+
+function moveUp() {
+  attacking = false;
+  var distance = 30 * tileSize; // 5 * rozmiar kafelka
+
+  var interval = setInterval(() => {
+    if (distance <= 0) {
+      
+
+    } else {
+      
+      potwor.style.top = potwor.offsetTop - 1.4 + 'px';
+      distance -= 1;
+      
+    }
+    setTimeout(function (){
+      clearInterval(interval); 
+      var potworX = potwor.offsetLeft + potwor.offsetWidth / 10;
+      var potworY = potwor.offsetTop + potwor.offsetHeight - 30;
+      
+      var dx = playerX * tileSize - potworX;
+      var dy = playerY * tileSize - potworY;
+      canv=1
+      
+      setTimeout(function (){
+      attacking=true
+      canv=0
+      },12000)
+      
+    },200)
+  }, 1);
+  
+}
+var canv=0;
+    </script>
+    <div id="tles" >
+      
+    </div>
+  </div>
+
+
+</body>
+
+</html>
+<script>
+  if (innerWidth > 600) {
+    
+
+  }
+
+  function playerCompactResponive() {
+    playerX = 5
+  }
+</script>
+<script>
+  var col = {
+    rodaj: 0,
+
+    x: -50,
+    obj: 0,
+    y: 0,
+    object_y: 0
+  }
+  
+  
+  
+  var i=0
+  var map=``
+  generate()
+  
+  function generate(){
+   map=``
+   
+    
+    
+    
+    
+     // wyczyść zawartość elementu div przed wygenerowaniem nowej mapy
+  for (var i = 0; i < Objs.length; i++) {
+      
+  
+if (Objs[i] === 1) {
+      map += '<img class="tile" src="./grass.png " alt=""/>'
+    }
+    if (Objs[i] === 0) {
+      map += '<div class="null" src="./void.png " alt="" ></div>'
+    }
+    if (Objs[i] === 2) {
+      map += '<div class="nothing" ></div>'
+    }
+    if (Objs[i] === 3) {
+      map += '<div class="Lava" ></div>'
+    }
+    if (Objs[i] === 4) {
+      map+= '<div class="null2" ><div class="Spike" ></div></div>'
+      
+    }
+    if (Objs[i] === 5) {
+      map += '<div class="endblock" >♥️</div>'
+    
+    }
+    if (Objs[i] === 6) {
+      map += '<img class="tile" src="./wood.png " alt=""/>'
+    }
+        if (Objs[i] === 7) {
+          map += '<div class="swither" >🍦</div>'
+        }
+        if (Objs[i] === 8) {
+          map += '<div class="info" ><p>To deffact boss you nedd hit by boss if it stay in the air you need to collide with it and he get damage</p></div>'
+        }else if (Objs[i] === 9) {
+          map += '<img class="tile" src="./graveGrass.png " alt=""/>'
+        }
+    document.getElementById('tles').innerHTML = map;
+
+  
+  }     if (nextmap > 0) {
+        setTimeout(lo, 200)
+      }
+  
+  } 
+  
+</script>
+<script>
+
+</script>
+
+
+<style>
+
+</style>
+</head>
+
+<body>
+  <style>
+    #xd{
+      
+      background : linear-gradient(to bottom right ,rgba(10, 57, 69, 1) 50% , rgba(13, 88, 108, 1) 20%); 
+      background-size: 200% 200%;
+      animation: gradient 5s ease-out infinite;
+    }
+        @keyframes gradient {
+      0% {
+        background-position: 0% 50%;
+      }
+      50% {
+        background-position: 100% 20%;
+      }
+      100% {
+        background-position: 0% 50%;
+      }
+    }
+  </style>
+<div  id="xd"  style="position:absolute;z-index:199; top:0;left:0;height:100vh;width:100vw;color:rgba(0,200,255,1)  ;font-size:44px; overflow-y:scroll ;padding: 25px" class="menu"> 
+
+<h1 style="font-size :15vw; text-shadow: 1px 1px 10px rgba(0, 100, 100, 0.8);">wenglon</h1>
+<pre style="white-space:pre-wrap; font-family :'Courier New'; font-size :15px;" > 
+
+</pre>
+<div class="buttonsd">
+  <button class="btnd" onclick="adio()">Play</button>
+  <button class="btnd">Maps</button>
+  <br>
+  <br>
+    <button class="btnd">Mods</button>
+  <button class="btnd">Options </button>
+  <button class="btnd">Source </button>
+  <button class="btnd" onclick="document.querySelector('#thi').style.display='block'">About </button>
+</div>
+
+</div>
+     <div id="thi" onclick="setTimeout(function (){document.querySelector('#thi').style.display='none'},200)" style="margin-left: 10vw;margin-top:10vh;   position:absolute;z-index:999; top:0;left:0;height:80vh;width:80vw;background :rgba(20,20,20,1) ;color:rgba(200,200,200,1)  ;display:none ;font-size:94%; overflow :scroll ;" ><div style="padding: 20px;color:white ;background :rgba(50,50,50,1) ;" >About</div>
+     <pre style="white-space: pre-wrap; overflow-y :scroll ;">
+       
+       
+     Welcome Nice to meet you ☺️
+     You can subscribe my channel or , and watch
+     some of my 
+     content
+     
+     ▶️ YouTube 
+     
+     <a href="https://www.youtube.com/@Nexaturion?themeRefresh=1">Nexaturion </a>
+     
+      <button class="button " onclick="boss1map(); ">Go to Boss fight</button>
+
+
+     </pre>
+     
+     
+     </div>
+
+<style>
+.buttonsd{
+  position :absolute ;
+  top:70vh;
+  left:50vw;
+  width :100vw;
+  transform: translate(-50%,-50%)
+}
+ .menu {
+    text-align: center;
+    margin: 0px;
+    color: white ;
+  }
+  .btnd {
+    border :none ;
+  display: inline-block;
+  background-color: #141414;
+  color: #fff;
+  padding: 15px 25px;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.btnd:hover {
+  background-color: #666;
+}
+* {
+  box-sizing: border-box;
+  background-attachment: fixed;
+  margin: 0px;
+  font-family: Arial;
+  user-select: none;
+  
+
+}
+.menu {
+  width: 100vw;
+  overflow: scroll;
+  margin: 0;
+  height: 100vh;
+  
+  padding: 10px;
+  background-color: #393939;
+}
+</style>
+
+
+  <div id="console">x: <span id="x"></span>, y: <span id="y"></span></div>
+
+  <script>
+
+  </script>
+  <div class="Bossbar">
+    <bar>Vobasol Boss </bar>
+  </div>
+</body>
+
+
+
+
+<div id="window12" class="window" style="top: 100px; left: 100px; display: block ; z-index :9999999;background-color: white; color: red; font-size: 40px" data-pos1="0" data-pos2="0">
+  <div class="window-header2" ontouchstart="dragTouchStart(event, 'window12')" ontouchmove="dragTouchMove(event, 'window12')">
+    <strong style="color: black;">options</strong>
+    <div class="window-controls" onclick="closeWindow('window12')">x</div>
+    <div class="window-controls window-controls-left" onclick="toggleFullscreen('window12')"></div>
+  </div>
+  <div class="term124">
+    <br>
+<h1 style="font-size:140%;" >Uwaga Zastosowanie efektu chromatic-aberration </h1> <br>
+<h2>może spowodować obciazenia procesora </h2>
+<h3>nie zaleca się uruchamianie tego efektu na słabych urzadzeniach</h3>
+<pre style="white-space :pre-wrap ;" >
+
+
+
+To są opcje eksperymentalne nie są odpowiednio dostosowane 
+i mogą nie poprawnie działać na niektórych urządzeniach i przegladarkach
+
+jeżeli masz jakiś problem bądź chcesz jakiś pomysł dorzucić od siebie lub dołączyć do zespołu możesz do mnie napisać na muj gmail firmowy
+
+<p style="color:blue ;" >awlie8518@gmail.com </p>
+  
+</pre>
+<br><br>
+<h4 style="color :red ;" >Jeżeli nie wiesz czym to jest najlepiej kliknij Cancel aby zamknąć na zawsze okno lub wtd aby je schować na dole</h4>
+<br><br>&nbsp;&nbsp;<button onclick="closeWindow('window12')" class="button" >Cansel</button>
+<br>
+&nbsp;&nbsp;<button onclick="cha()" class="button" >Active</button> <br>
+&nbsp;&nbsp;<button onclick="nocha()" class="button" >desactive</button>
+<br>
+&nbsp;&nbsp;<button onclick="wintodown('window12')" class="button" >wtd</button>
+  </div>
+  <style>
+          .button {
+            padding: 10px 20px;
+            background-color: #FFB55E;
+            color: #14181B;
+            border: none;
+            border-radius: 5px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            margin-bottom: 20px;
+        }
+
+        .button:hover {
+            background-color: #23CE6B;
+        }
+
+    .term124 {
+      padding :10px;
+      background: white;
+      overflow: hidden;
+      overflow: scroll;
+      height : 86%;
+      color: black;
+    }
+
+    @media (max-width: 768px) {
+      #contentPre,
+      #projektTextarea {
+        width: 90%;
+      }
+    }
+
+    @media (min-width: 769px) {
+      #contentPre,
+      #projektTextarea {
+        width: 100%;
+      }
+    }
+  </style>
+
+</div>
+</html>
+<script>
+  setTimeout(mthp, 20)
+  let health = 100;
+  
+
+  function mthp() {
+    let bar = document.querySelector('.bar');
+    let percentage = health + '%';
+
+   let Bossbar = document.querySelector('bar');
+   let Bosspercentage = Boss1health + '%';
+    bar.style.width = percentage;
+    Bossbar.style.width = Bosspercentage;
+    if (hurtty == 1) {
+      let percentage = health + '%';
+      health -= 5;
+      bar.style.width = percentage;
+
+    }
+    if (health < -20) {
+      Nope=0
+      nextmap=0
+      
+     
+      if(llll===0){
+        
+        playerY = -1000000;
+        playerX = 0;
+        
+        health=100
+        
+        document.getElementById('ytt').style.display = "block "
+        audio.src = "./not_again.mp3";
+        audio.currentTime = 0;
+        aud.pause();
+        
+      audio.play();
+      llll=1
+      if(aud2){
+      aud2.pause();
+      }
+      }
+    }
+    setTimeout(mthp, 10)
+  }
+  var llll=0
+</script>
+<div id="health-bar">
+  <div class="bar full"></div>
+</div>
+
+<style>
+
+</style>
+<script src="./Fps.js"></script>
+<script src="./Collisionplayer.js"></script>
+
+
+
+
+<script>
+  //cheets dev mode
+  var updating=0
+  onload =function Update(){
+  var important = "no";
+  updating+=1
+  if(updating<5){
+    setTimeout(Update,20)
+  }
+  
+  } 
+</script>
+<script src="./Music.js"></script>
+<link rel="stylesheet" href="./Block.css ">
+<link rel="stylesheet" href="./Gui.css">
+<link rel="stylesheet" href="./Style.css">
+
+<style>
+  .Bossbar{
+    display :none ;
+    position :fixed ;
+    z-index :9999;
+    width: 50vw;
+    height :30px;
+    top: 5vh;
+    left:50vw;
+    background :#000000;
+    transform:translate(-50%,0);
+    
+  }
+  bar{
+    
+    background: #FF0000;
+    position :absolute ;
+    height :100%;
+    text-align: center ;
+    display :flex ;
+    justify-content :center ;
+    align-items: center ;
+    color :#FFFFFF;
+  }
+  *{
+    margin :0;
+  }
+  html,
+  body {
+    touch-action: none;
+    user-scalable: none;
+    position : fixed ;
+    width :100vw;
+    height :100vh;
+    
+  }
+</style>
+<style>
+    #buttons{ position :absolute ;bottom: 50px;left:5vw;width :200px; }.btnere{ display  :flex ;float :left ;margin :2px;justify-content :center ;
+  border: 2px solid #B2B2B22B;
+  border-radius: 5px;
+  align-items :center ;width :80px;height :80px;font-size :20px;background :#000000; color: #D0D0D0}.btnere.amactive { background :#00E6FF; }.nulljse{display :flex;float :left;margin :2px;justify-content :center;align-items :center;width :20px;height :50px; font-size :20px;background :#1A1A1A00;color: #D0D0D000;}
+    #health-bar {
+      position: fixed;
+      top: 10px;
+      left: 10px;
+      width: 200px;
+      height: 20px;
+      background-color: #532E0D;
+  
+    }
+  
+    #health-bar .bar {
+      height: 100%;
+      box-shadow: 0px 0px 10px #FF1B1B;
+      background-color: #FF1B1B;
+      border-radius: 1px;
+      transition: width 0.2s ease-in-out;
+    }
+  
+    #health-bar .bar.full {
+      width: 100%;
+    }
+  
+    #health-bar .bar.half {
+      width: 50%;
+    }
+</style>
+
+
+
+<svg width="0" height="0">
+  <filter id="ca">
+    <feColorMatrix type="matrix" 
+      result="red_"             
+      values="4 0 0 0 0
+              0 0 0 0 0 
+              0 0 0 0 0 
+              0 0 0 1 0"/>
+    <feOffset in="red_" dx="1" dy="0" result="red"/>
+    <feColorMatrix type="matrix" 
+      in="SourceGraphic"             
+      result="blue_"             
+      values="0 0 0 0 0
+              0 2 0 0 0 
+              0 0 6 0 0 
+              0 0 0 1 0"/>
+    <feOffset in="blue_" dx="-1.5" dy="0" result="blue"/>    
+    <feBlend mode="screen" in="red" in2="blue"/>
+
+  </filter>
+</svg>
+
+
+
+
+<style>
+  			.window {
+  			  
+				position: fixed ;
+				width: 200px;
+				height: calc(10vw + 20vh);
+				background-color: #E0E0E0;
+				border: 1px solid #8C8C8C;
+				overflow: auto;
+				box-shadow: 12px 12px 0px rgba(12, 0, 92, 0.4);
+				min-width: 100px;
+				max-width: 300px;
+				min-height: 100px;
+				max-height: 300px;
+			}
+
+			.window-no-res {
+				position: absolute;
+				width: 200px;
+				height: 150px;
+				background-color: #E0E0E0;
+				border: 1px solid #8C8C8C;
+				overflow: auto;
+				min-width: 10vw;
+				max-width: 3000vw;
+				min-height: 10vh;
+				max-height: 3000vh;
+			}
+
+			.window-header {
+				position: relative;
+
+				height: 20px;
+				width: 100%;
+				background-color: #D3D3D3;
+				cursor: move;
+				touch-action: none;
+			}
+			.window-header2 {
+			  position: relative;
+
+			  height: 20px;
+			  width: 100%;
+			  background-color: #578FC2;
+			  cursor: move;
+			  touch-action: none;
+			}
+			* {
+				font-size: 15px;
+				/*font-family: "Courier New";*/
+				
+			}
+
+			.window-title {
+				margin: 0;
+				padding: 4px;
+			}
+
+			.window-controls {
+				position: absolute;
+				top: 0;
+				right: 0;
+				width: 20px;
+				height: 20px;
+
+				background-color: #D32F2F;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				cursor: pointer;
+				color: white;
+			}
+
+			.window-controls:active {
+				background: #FF0000;
+			}
+
+			.window-controls-left {
+				right: 20px;
+				background-color: #1976D2;
+			}
+</style>
+<script>
+  			function openWindow(windowId) {
+				document.getElementById(windowId).style.display = 'block';
+			}
+function wintodown(windowId) {
+  
+  document.getElementById(windowId).style.top = '97vh';
+  document.getElementById(windowId).style.left = '0px';
+}
+			function closeWindow(windowId) {
+				document.getElementById(windowId).style.display = 'none';
+			}
+			onload = (function() {
+				document.getElementById('imageDisplay').style.display = "none "
+			})
+
+			function dragTouchStart(e, windowId) {
+				e = e || window.event;
+				e.preventDefault();
+				var elmnt = document.getElementById(windowId);
+				elmnt.setAttribute("data-pos1", e.touches[0].clientX - elmnt.offsetLeft);
+				elmnt.setAttribute("data-pos2", e.touches[0].clientY - elmnt.offsetTop);
+			}
+
+			function dragTouchMove(e, windowId) {
+				e = e || window.event;
+				e.preventDefault();
+				var elmnt = document.getElementById(windowId);
+				var pos1 = parseInt(elmnt.getAttribute("data-pos1")) || 0;
+				var pos2 = parseInt(elmnt.getAttribute("data-pos2")) || 0;
+				var posX = e.touches[0].clientX - pos1;
+				var posY = e.touches[0].clientY - pos2;
+				elmnt.style.top = posY + "px";
+				elmnt.style.left = posX + "px";
+			}
+
+</script>
+<script>
+  function cha(){
+    document.querySelector('html').classList.add('cha')
+  }
+  function nocha() {
+    document.querySelector('html').classList.remove('cha')
+  }
+</script>
+
+    <filter id="bm">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="4" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
